@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AdressForm.css";
 
-const AdressForm = () => {
+const AdressForm = ({ addAdresses }) => {
   const [street, setStreet] = useState("");
   const [postalcode, setPostalCode] = useState("");
   const [city, setCity] = useState("");
@@ -17,6 +17,8 @@ const AdressForm = () => {
       postalcode,
       city,
     };
+    // Appelez la fonction de rappel avec les données du formulaire
+    addAdresses(adress);
 
     setAdresses([...adresses, adress]);
     setStreet("");
@@ -85,14 +87,6 @@ const AdressForm = () => {
           <button type="submit">Ajouter</button>
         </div>
       </form>
-
-      <h3>Adresses Ajoutés :</h3>
-
-      {adresses.map((item, index) => (
-        <h4 key={index}>
-          {item.street}, {item.postalcode}, {item.city}
-        </h4>
-      ))}
     </div>
   );
 };
