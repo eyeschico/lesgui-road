@@ -3,7 +3,7 @@ import React from "react";
 const RouteCalculator = () => {
   return (
     <div>
-      <h1>Route Calculator</h1>
+      <h2>Route Calculator</h2>
     </div>
   );
 };
